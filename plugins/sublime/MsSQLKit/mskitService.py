@@ -3,6 +3,7 @@ import sublime_plugin
 import time
 import _thread
 
+from datetime import datetime
 
 from MsSQLKit.pipe import *
 from MsSQLKit.sqlView import *
@@ -75,13 +76,15 @@ class mskitInterface(object):
             self.isRunning = True
 
         elif (answer["answerId"] == "EXECRESULT"):
-            view = self.views[str(answer["tabId"])].view
+            sqlView = self.views[str(answer["tabId"])]
+            view = sqlView.view
             if (answer["errorId"] != 0):
                 view.set_console_message(answer["message"], True)
                 view.set_status("mskit", "Error executing query")
             else:
+                queryDuration = datetime.utcnow() - sqlView.queryStartTime 
                 view.set_console_message(answer["message"], True)
-                view.set_status("mskit", "Query executed successfully")
+                view.set_status("mskit", "Query executed successfully ["+str(queryDuration)+"]")
 
         elif (answer["answerId"] == "EXECTXTRESULT"):
             # TODO : Finish this. Render the table in text
@@ -192,7 +195,9 @@ class mskitInterface(object):
             return self.sendString(sql)
 
     def executeQuery(self, tabId, sql):
-        if (self.isViewReady(tabId)):
+        sqlView = self.getSqlViewIfReady(tabId)
+        if (sqlView is not None):
+            sqlView.queryStartTime = datetime.utcnow()
             r = self.sendCommand(
                 commandId="EXECSQL", tabId=tabId, optionalMsgCount=1)
             return self.sendString(sql)

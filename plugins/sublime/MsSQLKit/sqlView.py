@@ -29,6 +29,7 @@ class SqlView(object):
         self.view=view
         self.isConnected = False
         self.metaDataBinding = False
+        #self.queryStartTime = 0
 
     def __del__(self):
         self.closeConnection()
