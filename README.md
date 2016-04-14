@@ -18,7 +18,7 @@ Communication between Python and .net is done via namedPipe.
 - Some SQLServer Management Assembly :
   + Microsoft.SqlServer.Management.SmoMetadataProvider and Microsoft.SqlServer.Management.SqlParser assembly, available in "Microsoft® SQL Server® Transact-SQL Language Service". tsqllanguageservice.msi 
   + Microsoft.SqlServer.Management.sdk.sfc available in Microsoft® SQL Server® 2014 Shared Management Objects SharedManagementObjects.msi
-  + Those 2 msi are available in the Microsoft SQLServer Feature Pack here https://www.microsoft.com/fr-FR/download/details.aspx?id=42295
+  + Those 2 msi are available in the Microsoft SQLServer Feature Pack here https://www.microsoft.com/en-us/download/details.aspx?id=42295
 
 ## Planned/Possible features/amelioration
 - Linter
