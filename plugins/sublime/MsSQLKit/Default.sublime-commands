@@ -1,0 +1,26 @@
+[
+    {
+        "caption": "MSKit: Connect",
+        "command": "msk_connect"
+    },
+
+    {
+        "caption": "MSKit: Start server",
+        "command": "msk_start_server"
+    },
+
+    {
+        "caption": "MSKit: Script selected object",
+        "command": "msk_script_object"
+    },
+
+    {
+        "caption": "MSKit: Execute selected query",
+        "command": "msk_execute_query"
+    },
+
+    {
+        "caption": "MSKit: sphelp selected object",
+        "command": "msk_sphelp_object"
+    }
+]

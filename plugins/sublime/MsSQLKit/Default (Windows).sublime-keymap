@@ -1,0 +1,6 @@
+[
+	{ "keys": ["f2"], "command": "msk_script_object" },
+	{ "keys": ["f5"], "command": "msk_execute_query" },
+	{ "keys": ["ctrl+f5"], "command": "msk_connect" },
+	{ "keys": ["f1"], "command": "msk_sphelp_object" },
+]

@@ -1,0 +1,26 @@
+{ 
+	// Available connection list
+	"Connections": 
+	[
+		{
+			// Name of the connection, so you can easily identify them
+			"Name": "Production server 1"
+			// Instance name
+			,"Instance" : "ProdServerName\\ProdInstanceName"
+			// If you want to use Windows based authentication
+			// If false, then you must define User and Password
+			, "Instegrated Security" : true
+			// Default database 
+			, "DefaultDatabase" : "Customer"
+			},
+		{
+			"Name": "UAT server 2"
+			,"Instance" : "Carlos\\Uat1"
+			, "Instegrated Security" : false
+			, "User" : "testUser"
+			, "Password" : "xxxxxx"
+		}
+	],
+	// Where to find the MsSQLKit.exe file
+	"MskitPath" : ".",
+}
