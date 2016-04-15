@@ -44,12 +44,11 @@ namespace MsSQLKit {
 			this.dataGridView.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 
 			if (Theme.ForegroundColor != Color.Empty)
-				dataGridView.GridColor = Theme.foregroundColorDark;//System.Drawing.ColorTranslator.FromHtml("#42464C");
+				dataGridView.GridColor = Theme.foregroundColorDark;
 			if (Theme.BackgroundColor != Color.Empty)
-				dataGridView.BackgroundColor = Theme.BackgroundColor;//System.Drawing.ColorTranslator.FromHtml("#22282A");
+				dataGridView.BackgroundColor = Theme.BackgroundColor;
 			
 			// Auto Resize handeling
-			// dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 			dataGridView.AllowUserToResizeColumns = true;
 			this.Margin = new Padding(0,0,0,20);
 
@@ -59,7 +58,6 @@ namespace MsSQLKit {
 
 		public int getApproximateTotalHeight() {
 			return dataGridView.Rows.GetRowsHeight(DataGridViewElementStates.None) + dataGridView.ColumnHeadersHeight;
-			//return dataGridView.ColumnHeadersHeight * dataGridView.RowCount;
 			
 		}
 
@@ -85,7 +83,7 @@ namespace MsSQLKit {
 			DataGridView dv = (DataGridView)sender;
 			
 			if (e.ColumnIndex == -1 && e.RowIndex != -1) {
-				//e.Graphics.FillRectangle(Brushes.Blue, e.CellBounds);
+
 				e.Paint(e.ClipBounds, (DataGridViewPaintParts.Background | DataGridViewPaintParts.Border | DataGridViewPaintParts.SelectionBackground));
 				TextRenderer.DrawText(e.Graphics, (e.RowIndex + 1).ToString(), dv.RowHeadersDefaultCellStyle.Font,
 									  e.CellBounds, e.CellStyle.ForeColor,

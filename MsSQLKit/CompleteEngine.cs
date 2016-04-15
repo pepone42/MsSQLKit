@@ -71,8 +71,7 @@ namespace MsSQLKit {
 		}
 
 		ParseResult pResult;
-		//List<ParseResult> pResults;
-		//static private Dictionary<string, SqlConnection> connections = new Dictionary<string, SqlConnection>();
+
 		static private Dictionary<string, CompleteServer> server = new Dictionary<string, CompleteServer>();
 		static CustomMetadataDisplayInfoProvider metadataDisplayInfoProvider = new CustomMetadataDisplayInfoProvider();
 

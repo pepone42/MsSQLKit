@@ -100,10 +100,8 @@ namespace MsSQLKit {
 			connection_.Open();
 			ownerSpid_ = getSpid();
 			tabId_ = tabId;
-			//if (tabId_ != null)
-			//	name_ = Path.GetFileName(tabId_);
+
 			complete = new CompleteEngine(connection_);
-			//queryResult_ = new List<DataTable>();
 		}
 
 		void connection_InfoMessage(object sender, SqlInfoMessageEventArgs e)
@@ -214,7 +212,6 @@ namespace MsSQLKit {
 			if (connection_.State != ConnectionState.Closed)
 				connection_.Close();
 			connection_.Dispose();
-			//queryResult_.Dispose();
 		}
 
 		public object ExecuteScalar(string sql)

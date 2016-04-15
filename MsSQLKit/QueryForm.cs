@@ -33,12 +33,6 @@ namespace MsSQLKit {
 		{
 			InitializeComponent();
 
-			//TableLayoutPanel customTab = new TableLayoutPanel();
-			//customTab.Dock = DockStyle.Top;
-			//customTab.Height = 20;
-			//customTab.BackColor = sqlQueryGridView.backgroundColor;
-			//this.Controls.Add(customTab);
-
 			querys_ = new Dictionary<int, Query>();
 
 			spidToolStripLabel.Text = "";
@@ -52,8 +46,7 @@ namespace MsSQLKit {
 		{
 			if (!sqlQueryTabControl.TabPages.ContainsKey(tabId.ToString())) {
 				sqlQueryTabControl.TabPages.Add(tabId.ToString(), Path.GetFileName(filename));
-				//var grid = new sqlQueryGridView();
-				//grid.Dock = DockStyle.Fill;
+
 				var panel = new TableLayoutPanel();
 				panel.BackColor = Theme.BackgroundColor;
 				panel.Dock = DockStyle.Fill;
@@ -62,7 +55,6 @@ namespace MsSQLKit {
 				panel.Margin = new System.Windows.Forms.Padding(0);
 				panel.Padding = panel.Margin;
 				sqlQueryTabControl.TabPages[tabId.ToString()].Controls.Add(panel);
-				//sqlQueryTabControl.TabPages[tabId.ToString()].Margin = new System.Windows.Forms.Padding(0);
 			}
 		}
 		public void AttachQuery(int tabId, Query query)
@@ -82,7 +74,7 @@ namespace MsSQLKit {
 		public void TabExecuteQuery(int tabId, string sql)
 		{
 			sqlQueryTabControl.TabPages[tabId.ToString()].Select();
-			//sqlQueryGridView grid = (sqlQueryGridView)sqlQueryTabControl.TabPages[tabId.ToString()].Controls["sqlQueryGridView"];
+
 			cancelToolStripButton.Enabled = true;
 			querys_[tabId].Execute(sql);
 		}

@@ -25,7 +25,6 @@ namespace MsSQLKit {
 		{
 
 				Application.EnableVisualStyles();
-				//Theme.applyTheme("Consolas", 9F, "#22282A", "#F1F2F3", "#4F6164");
 				Application.SetCompatibleTextRenderingDefault(false);
 				queryForm = new QueryForm();
 
